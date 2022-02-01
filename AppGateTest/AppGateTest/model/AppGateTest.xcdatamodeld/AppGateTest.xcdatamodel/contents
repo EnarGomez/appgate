@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="19H1713" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="User" representedClassName="User" syncable="YES">
+        <attribute name="use_password" attributeType="String" minValueString="8"/>
+        <attribute name="use_username" attributeType="String"/>
+        <relationship name="validations" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Validation" inverseName="user" inverseEntity="Validation"/>
+    </entity>
+    <entity name="Validation" representedClassName="Validation" syncable="YES">
+        <attribute name="val_date" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="val_json" optional="YES" attributeType="String"/>
+        <attribute name="val_latitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="val_longitude" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="val_status" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User" inverseName="validations" inverseEntity="User"/>
+    </entity>
+    <elements>
+        <element name="User" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Validation" positionX="178.37109375" positionY="-127.69140625" width="128" height="133"/>
+    </elements>
+</model>
